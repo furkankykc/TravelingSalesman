@@ -26,19 +26,6 @@ class Node:
         return distance.euclidean(a, b)
 
 
-def plot():
-    x = [node.x for node in nodes]
-    y = [node.y for node in nodes]
-
-    # ax = plt.plot()
-    # first plot that contains cities
-    # second plot that contains route
-    ax, = plt.plot(x, y, 'r.')
-    plt.suptitle('Smallest Increase Algorithm')
-
-    # draw all names(labels) for cities
-    for i in range(len(x)):
-        plt.annotate(str(i), (x[i], y[i]))
 
 
 def greedy(nodes: list, start_index: int = 0, end_index=None, plot=False, plot_annotate=True):
@@ -115,7 +102,6 @@ def greedy(nodes: list, start_index: int = 0, end_index=None, plot=False, plot_a
 def smallest_increase(nodes: list, start_index: int = 0, end_index=-1, plot=False, plot_annotate=True) -> [list, float]:
     # list of travelled cities
     my_travel_book = []
-
     if DEBUG:
         print('traveler\'s start point : ', start_index)
 
@@ -142,6 +128,7 @@ def smallest_increase(nodes: list, start_index: int = 0, end_index=-1, plot=Fals
 
         line2, = ax.plot(x, y, 'b--')
         plt.draw()
+
     # first plot that contains cities
     # second plot that contains route
 
@@ -174,6 +161,7 @@ def smallest_increase(nodes: list, start_index: int = 0, end_index=-1, plot=Fals
             line2.set_ydata([nodes[i].y for i in my_travel_book[:-1]])
             plt.draw()
             plt.pause(pause_interval)
+
     if plot:
         line2.set_xdata([nodes[i].x for i in my_travel_book])
         line2.set_ydata([nodes[i].y for i in my_travel_book])
@@ -255,10 +243,10 @@ if __name__ == '__main__':
     end_idx = 51
 
     # plot gostermek icin plot true
-    # smallest_book, _ = smallest_increase(nodes, start_idx, end_idx, plot=True, plot_annotate=True)
-    greedy_book, _ = greedy(nodes, start_idx, end_idx, plot=True)
+    smallest_book, _ = smallest_increase(nodes, start_idx, end_idx, plot=True, plot_annotate=True)
+    # greedy_book, _ = greedy(nodes, start_idx, end_idx, plot=True)
     # sehirlerin rotasini gostermek icin show_route = True parametresi girilmelidir
-    find_closest_path(greedy_book, 12, 5, plot=True)
+    # find_closest_path(greedy_book, 12, 5, plot=True)
     # find_closest_path(smallest_book, 12, 5, plot=True, show_route=True, suptitle='Smallest Increase Algorithm Route')
 
     # result.csv ye algoritmalarin baslangic ve bitis noktalarina bagli olarak zaman ve uzaklik sonuclarini yazdirir
