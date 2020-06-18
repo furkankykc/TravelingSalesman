@@ -229,26 +229,25 @@ def find_closest_path(travellers_book: list, start_point: int, end_point: int, p
 
     return distance
 
-
-if __name__ == '__main__':
-    nodes = read_all('resources/sehir_xy.txt')
-
-    # # plot update interval
-    pause_interval = 0.000000000000000000000000000001
-    # # if debug is true its printing bunch of stuff on console
-    # DEBUG = True
-    #
-    # # when start index doesnt assigned a value its select 0 index in list
-    start_idx = 45
-    # end index required just for smallest_increase when it doesnt assign a value its select last point on list
-    end_idx = 51
-
-    # plot gostermek icin plot true
-    # smallest_book, _ = smallest_increase(nodes, start_idx, end_idx, plot=True, plot_annotate=True)
-    greedy_book, _ = greedy(nodes, start_idx, end_idx, plot=True)
-    # sehirlerin rotasini gostermek icin show_route = True parametresi girilmelidir
-    # find_closest_path(greedy_book, 12, 5, plot=True)
-    # find_closest_path(smallest_book, 12, 5, plot=True, show_route=True, suptitle='Smallest Increase Algorithm Route')
-
-    # result.csv ye algoritmalarin baslangic ve bitis noktalarina bagli olarak zaman ve uzaklik sonuclarini yazdirir
-    # Compare()
+# if __name__ == '__main__':
+#     nodes = read_all('resources/sehir_xy.txt')
+#
+#     # # plot update interval
+#     pause_interval = 0.000000000000000000000000000001
+#     # # if debug is true its printing bunch of stuff on console
+#     # DEBUG = True
+#     #
+#     # # when start index doesnt assigned a value its select 0 index in list
+#     start_idx = 45
+#     # end index required just for smallest_increase when it doesnt assign a value its select last point on list
+#     end_idx = 51
+#
+#     # plot gostermek icin plot true
+#     # smallest_book, _ = smallest_increase(nodes, start_idx, end_idx, plot=True, plot_annotate=True)
+#     greedy_book, _ = greedy(nodes, start_idx, end_idx, plot=True)
+#     # sehirlerin rotasini gostermek icin show_route = True parametresi girilmelidir
+#     # find_closest_path(greedy_book, 12, 5, plot=True)
+#     # find_closest_path(smallest_book, 12, 5, plot=True, show_route=True, suptitle='Smallest Increase Algorithm Route')
+#
+#     # result.csv ye algoritmalarin baslangic ve bitis noktalarina bagli olarak zaman ve uzaklik sonuclarini yazdirir
+#     # Compare()

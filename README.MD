@@ -1,7 +1,12 @@
 ## TRAVELING SALESMAN PROBLEM
+### Install
+```.shell script
+pip install traveling-salesman
+```
+
 ### Usage
 ```python
-from TSM import greedy,smallest_increase,read_all,find_closest_path
+from TSM.TSM import greedy,smallest_increase,read_all,find_closest_path
 nodes = read_all('resources/sehir_xy')
 
 smallest_book, distance_result = smallest_increase(nodes, start_index=45, end_index=51, plot=True, plot_annotate=True)
@@ -28,4 +33,4 @@ greedy_book, distance_result = greedy(nodes, start_index=45,end_index=51, plot=F
 find_closest_path(greedy_book, 12, 5, plot=True)
 ```
 ### Result
-![greedyfcp](images/fcpgreedy.png)
+![greedyfcp](https://raw.githubusercontent.com/furkankykc/TravelingSalesman/master/images/fcpgreedy.png)
